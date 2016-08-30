@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Practica2_Punto2</string>
+    <string name="Titulo">CALCULADORA</string>
+    <string name="Ingresar">Ingrese los números que desea operar</string>
+    <string name="Numero1">Numero_1</string>
+    <string name="Numero2">Numero_2</string>
+    <string name="sumar">Suma</string>
+    <string name="restar">Resta</string>
+    <string name="multiplicar">Multiplicacion</string>
+    <string name="dividir">División</string>
+    <string name="resultado">Resultado</string>
+    <string name="Solucionar">Solucion</string>
+</resources>

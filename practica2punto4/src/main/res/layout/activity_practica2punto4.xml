@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    >
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Titulo"
+                android:textSize="20dp"
+                android:layout_marginLeft="70dp"
+                android:textColor="@color/blue"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Ingrese"
+                android:textSize="20dp"
+                />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/Usuario1"
+                android:id="@+id/eNombre"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Ingrese1"
+                android:textSize="20dp"
+                />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/Contraseña1"
+                android:id="@+id/eContraseña"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Ingrese2"
+                android:textSize="20dp"
+                />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/Contraseña1"
+                android:id="@+id/eContraseña1"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Ingrese3"
+                android:textSize="20dp"
+                />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/Correo1"
+                android:id="@+id/eCorreo"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Ingrese4"
+                android:textSize="20dp"
+                />
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/Grupo">
+
+                <RadioButton
+                    android:id="@+id/radio_femenino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Femenino1"
+                    android:onClick="onRadioButtonClicked"
+                    android:textSize="15sp"/>
+                <RadioButton
+                    android:id="@+id/radio_masculino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Masculino1"
+                    android:onClick="onRadioButtonClicked"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="50dp"/>
+            </RadioGroup>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Ingrese5"
+                android:textSize="20dp" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Fecha"
+                android:onClick="setDate"
+                android:id="@+id/bFechas"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Ingrese6"
+                android:textSize="20dp" />
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spCiudad"
+                android:entries="@array/Arreglo_ciudades"
+                >
+            </Spinner>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Ingrese7"
+                android:textSize="20dp" />
+            <CheckBox android:id="@+id/checkbox_leer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Leer1"
+                android:onClick="onCheckboxClicked"/>
+            <CheckBox android:id="@+id/checkbox_vertv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Vertv1"
+                android:onClick="onCheckboxClicked"/>
+            <CheckBox android:id="@+id/checkbox_correr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Correr1"
+                android:onClick="onCheckboxClicked"/>
+            <CheckBox android:id="@+id/checkbox_bailar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Bailar1"
+                android:onClick="onCheckboxClicked"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Aceptar1"
+                android:id="@+id/bAceptar"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/Ingrese8"
+                android:textSize="20dp"
+                android:id="@+id/Mostrar"/>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Practica23</string>
+    <string name="Ingrese">Ingrese la figura a la desea calcularle el área</string>
+    <string name="Titulo">ÁREAS</string>
+    <string name="Cuadrado1">Cuadro</string>
+    <string name="Triangulo1">Triángulo</string>
+    <string name="Rectangulo1">Rectángulo</string>
+    <string name="Circulo1">Círculo</string>
+    <string name="Ingresabase">Ingrese el valor de la base</string>
+    <string name="Ingresaaltura">Ingrese el valor de la altura</string>
+    <string name="Ingresaradio">Ingrese el valor del radio</string>
+    <string name="Ingresalado">Ingrese el valor del lado</string>
+    <string name="Base1">Base</string>
+    <string name="Altura1">Altura</string>
+    <string name="Radio1">Radio</string>
+    <string name="Lado1">Lado</string>
+    <string name="Resultado">Calcular</string>
+    <string name="Solucion1">Solución</string>
+</resources>

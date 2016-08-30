@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Titulo"
+        android:id="@+id/eTitulo"
+        android:textSize="20sp"
+        android:layout_marginLeft="100sp"
+        android:textColor="@color/blue"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Ingresar"
+        android:id="@+id/eIngresar"
+        android:textSize="20sp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/Numero1"
+        android:id="@+id/eNumero1"
+        android:inputType="number"
+        android:textSize="20sp" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/Numero2"
+        android:id="@+id/eNumero2"
+        android:inputType="number"
+        android:textSize="20sp" />
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/Grupo">
+
+        <RadioButton
+            android:id="@+id/radio_sumar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sumar"
+            android:onClick="onRadioButtonClicked"
+            android:textSize="15sp"/>
+        <RadioButton
+            android:id="@+id/radio_restar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/restar"
+            android:onClick="onRadioButtonClicked"
+            android:textSize="15sp"/>
+        <RadioButton
+            android:id="@+id/radio_multiplicar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/multiplicar"
+            android:onClick="onRadioButtonClicked"
+            android:textSize="15sp"/>
+        <RadioButton
+            android:id="@+id/radio_dividir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dividir"
+            android:onClick="onRadioButtonClicked"
+            android:textSize="15sp"/>
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/resultado"
+        android:id="@+id/bresultado"
+        android:textSize="20sp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/Solucionar"
+        android:id="@+id/eSolucionar"
+        android:textSize="25sp" />
+</LinearLayout>

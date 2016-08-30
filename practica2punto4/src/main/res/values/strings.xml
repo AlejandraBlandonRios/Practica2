@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Practica2punto4</string>
+    <string name="Titulo">Formulario de Registro</string>
+    <string name="Ingrese">Ingrese el nombre de Usuario</string>
+    <string name="Usuario1">Nombre de usuario</string>
+    <string name="Ingrese1">Ingrese la contraseña</string>
+    <string name="Contraseña1">Contraseña</string>
+    <string name="Ingrese2">Ingrese nuevamente la contraseña</string>
+    <string name="Correo1">Correo electrónico</string>
+    <string name="Ingrese3">Ingrese su correo electrónico</string>
+    <string name="Ingrese4">Ingrese su sexo</string>
+    <string name="Femenino1">Femenino</string>
+    <string name="Masculino1">Masculino</string>
+    <string name="Ingrese5">Ingrese la fecha de nacimiento</string>
+    <string name="Fecha">DD/MM/AAAA</string>
+    <string name="Ingrese6">Ingrese su lugar de nacimiento</string>
+    <string-array name="Arreglo_ciudades">
+        <item>Medellin</item>
+        <item>Bogotá</item>
+        <item>Bucaramanga</item>
+        <item>Cartagena</item>
+        <item>Ballanquilla</item>
+    </string-array>
+    <string name="Leer1">Leer</string>
+    <string name="Vertv1">Ver televisión</string>
+    <string name="Correr1">Correr</string>
+    <string name="Bailar1">Bailar</string>
+    <string name="Ingrese7">Ingrese sus hobbies o pasatiempos</string>
+    <string name="Aceptar1">Aceptar</string>
+    <string name="Ingrese8">Los datos son:</string>
+</resources>
