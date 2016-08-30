@@ -94,8 +94,8 @@ public class Practica2punto4 extends AppCompatActivity {
                 if (bFechas.length() == 0 || eNombre.length() == 0 || eContraseña.length() == 0 || eContraseña1.length() == 0
                         || eCorreo.length() == 0) {
                     CharSequence text = "Campos vacios";
-                    int duration = Toast.LENGTH_SHORT;
-                    Toast toast = Toast.makeText(getApplicationContext(), text, duration);
+                    //int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG);
                     toast.show();
                 } else {
                     Mostrar.setText(String.valueOf(eNombre.getText())+"\n"+ String.valueOf(eContraseña.getText())+
