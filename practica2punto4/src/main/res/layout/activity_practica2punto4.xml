@@ -51,6 +51,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/Contraseña1"
                 android:id="@+id/eContraseña"
+                android:inputType="textPassword"
                 android:textSize="20sp" />
             <TextView
                 android:layout_width="wrap_content"
@@ -63,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/Contraseña1"
                 android:id="@+id/eContraseña1"
+                android:inputType="textPassword"
                 android:textSize="20sp" />
             <TextView
                 android:layout_width="wrap_content"
@@ -109,12 +111,23 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Ingrese5"
                 android:textSize="20dp" />
-            <Button
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Fecha"
-                android:onClick="setDate"
-                android:id="@+id/bFechas"/>
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Ingrese9"
+                    android:onClick="setDate"
+                    android:id="@+id/bFechas"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Fecha"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/tFecha"
+                    android:textSize="20dp" />
+            </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -152,7 +165,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Bailar1"
                 android:onClick="onCheckboxClicked"/>
-
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

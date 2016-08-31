@@ -11,23 +11,29 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 import java.util.Calendar;
-import java.util.StringTokenizer;
 
 public class Practica2punto4 extends AppCompatActivity {
 
     Calendar calendar;
-    Button bFechas, bAceptar1;
+    Button bAceptar1;
     Spinner spCiudades;
     EditText eNombre, eContraseña, eContraseña1, eCorreo;
-    TextView Mostrar;
+    TextView Mostrar, tFecha;
     int year, month, day;
-    String Ciudad;
+    String Ciudad,Sexo;
+    RadioGroup Grupo;
+    String Hobby1="";
+    String Hobby2="";
+    String Hobby3="";
+    String Hobby4="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +41,13 @@ public class Practica2punto4 extends AppCompatActivity {
         setContentView(R.layout.activity_practica2punto4);
 
         //Objetos de loggin, para capturar informacion y luego mostrar
-        bFechas = (Button) findViewById(R.id.bFechas);
         eNombre = (EditText) findViewById(R.id.eNombre);
         eContraseña = (EditText) findViewById(R.id.eContraseña);
         eContraseña1 = (EditText) findViewById(R.id.eContraseña1);
         eCorreo = (EditText) findViewById(R.id.eCorreo);
         Mostrar = (TextView) findViewById(R.id.Mostrar);
+        tFecha =(TextView) findViewById(R.id.tFecha);
+        Grupo = (RadioGroup) findViewById(R.id.Grupo);
 
         //Objetos de Calendario, para el DatePicker
         calendar = Calendar.getInstance();
@@ -61,7 +68,6 @@ public class Practica2punto4 extends AppCompatActivity {
         {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getBaseContext(),parent.getItemIdAtPosition(position)+" seleccionada", Toast.LENGTH_LONG).show();
                 switch(position) {
                     case 0:
                         Ciudad="Medellin";
@@ -80,7 +86,6 @@ public class Practica2punto4 extends AppCompatActivity {
                         break;
                 }
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
@@ -91,20 +96,59 @@ public class Practica2punto4 extends AppCompatActivity {
         bAceptar1 = (Button) findViewById(R.id.bAceptar);
         bAceptar1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                if (bFechas.length() == 0 || eNombre.length() == 0 || eContraseña.length() == 0 || eContraseña1.length() == 0
-                        || eCorreo.length() == 0) {
-                    CharSequence text = "Campos vacios";
-                    //int duration = Toast.LENGTH_SHORT;
-                    Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG);
-                    toast.show();
+                int a=Grupo.getCheckedRadioButtonId();
+                if (tFecha.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Falta fecha de cumpleaños", Toast.LENGTH_LONG).show();
+                } else if (eNombre.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Falta el nombre", Toast.LENGTH_LONG).show();
+                } else if (a==-1) {
+                    Toast.makeText(getApplicationContext(), "Falta el género", Toast.LENGTH_LONG).show();
+                } else if ((eContraseña.getText().toString()).equals(eContraseña1.getText().toString())!=true) {
+                    Toast.makeText(getApplicationContext(), "Las contraseñas no coinciden", Toast.LENGTH_LONG).show();
+                } else if (eContraseña.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Falta la contraseña", Toast.LENGTH_LONG).show();
+                }else if (eContraseña1.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Falta confirmar contraseña", Toast.LENGTH_LONG).show();
+                } else if (Hobby1.length() == 0 && Hobby2.length()==0 && Hobby3.length()==0 && Hobby4.length()==0) {
+                    Toast.makeText(getApplicationContext(), "Falta ingresar algun Hobbie ", Toast.LENGTH_LONG).show();
+                }else if (eCorreo.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Falta el correo electrónico", Toast.LENGTH_LONG).show();
                 } else {
-                    Mostrar.setText(String.valueOf(eNombre.getText())+"\n"+ String.valueOf(eContraseña.getText())+
-                            "\n"+String.valueOf(eCorreo.getText())+"\n"+String.valueOf(bFechas.getText())+"\n"+String.valueOf(Ciudad)+"\n");
+                    Mostrar.setText("Tu nombre es: "+String.valueOf(eNombre.getText())+"\n"+ "La contraseña es:"
+                            +String.valueOf(eContraseña.getText())+ "\n"+"Tu correo es:"
+                            +String.valueOf(eCorreo.getText())+"\n"+"Tu fecha de nacimiento es: "+String.valueOf(tFecha.getText())
+                            +"\n"+"Tu lugar de nacimiento es:"+String.valueOf(Ciudad)+"\n"+"Tu género es:"+
+                            String.valueOf(Sexo)+"\n"+"Tus Hobbies son:"+String.valueOf(Hobby1)+" "+String.valueOf(Hobby2)+" "+String.valueOf(Hobby3)+
+                            " "+String.valueOf(Hobby4));
+                    eNombre.setText("");
+                    eContraseña.setText("");
+                    eContraseña1.setText("");
+                    eCorreo.setText("");
+
                 }
             }
         });
     }
-
+    //Funcion del RadioButton para género
+    public void onRadioButtonClicked(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+        switch (view.getId()) {
+            case R.id.radio_femenino:
+                if (checked) {
+                    Sexo = "Femenino";
+                }else{
+                    Sexo = "";
+                }
+                break;
+            case R.id.radio_masculino:
+                if (checked) {
+                    Sexo = "Masculino";
+                }else{
+                    Sexo="";
+                }
+                break;
+        }
+    }
     //Las siguientes son funciones para la fecha (DataPicker)
     @SuppressWarnings("deprecation")
     public void setDate(View view) {
@@ -126,9 +170,9 @@ public class Practica2punto4 extends AppCompatActivity {
         }
     };
 
-    //Funcion para ver la fecha en el boton Fecha
+    //Funcion para ver la fecha en el boton y text Fecha
     private void showDate(int year, int month, int day) {
-        bFechas.setText(new StringBuilder().append(day).append("/")
+        tFecha.setText(new StringBuilder().append(day).append("/")
                 .append(month).append("/").append(year));
     }
 
@@ -141,19 +185,23 @@ public class Practica2punto4 extends AppCompatActivity {
         switch(view.getId()) {
             case R.id.checkbox_leer:
                 if (checked)
-                    Toast.makeText(Practica2punto4.this, "Leer", Toast.LENGTH_SHORT).show();
+                    Hobby1 = "Leer";
+                else Hobby1="";
                 break;
             case R.id.checkbox_vertv:
                 if (checked)
-                    Toast.makeText(Practica2punto4.this, "Ver tv", Toast.LENGTH_SHORT).show();
+                    Hobby2 = "Ver Televisión";
+                else Hobby2="";
                 break;
             case R.id.checkbox_correr:
                 if (checked)
-                    Toast.makeText(Practica2punto4.this, "Correr", Toast.LENGTH_SHORT).show();
+                    Hobby3 = "Correr";
+                else Hobby3="";
                 break;
             case R.id.checkbox_bailar:
                 if (checked)
-                    Toast.makeText(Practica2punto4.this, "Bailar", Toast.LENGTH_SHORT).show();
+                    Hobby4 = "Bailar";
+                else Hobby4="";
                 break;
         }
     }
