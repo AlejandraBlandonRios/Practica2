@@ -44,8 +44,8 @@ public class Practica2punto2 extends AppCompatActivity {
                         Toast texto= Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT);
                         texto.show();
                     }else {
-                        numero1 = Integer.parseInt(eNumero_1.getText().toString());
-                        numero2 = Integer.parseInt(eNumero_2.getText().toString());
+                        numero1 = Double.parseDouble(eNumero_1.getText().toString());
+                        numero2 = Double.parseDouble(eNumero_2.getText().toString());
                         producto = numero1 + numero2;
                         bResultado.setOnClickListener(new View.OnClickListener() {
                             public void onClick(View view) {
@@ -62,14 +62,15 @@ public class Practica2punto2 extends AppCompatActivity {
                         Toast texto= Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT);
                         texto.show();
                     }else {
-                        numero1 = Integer.parseInt(eNumero_1.getText().toString());
-                        numero2 = Integer.parseInt(eNumero_2.getText().toString());
+                        numero1 = Double.parseDouble(eNumero_1.getText().toString());
+                        numero2 = Double.parseDouble(eNumero_2.getText().toString());
                         producto = numero1 - numero2;
                         bResultado.setOnClickListener(new View.OnClickListener() {
                             public void onClick(View view) {
                                 eSolucion.setText(String.valueOf(producto)); //opcion 1
                             }
                         });
+
                     }
                 }
                 break;
@@ -80,8 +81,8 @@ public class Practica2punto2 extends AppCompatActivity {
                         Toast texto= Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT);
                         texto.show();
                     }else {
-                        numero1 = Integer.parseInt(eNumero_1.getText().toString());
-                        numero2 = Integer.parseInt(eNumero_2.getText().toString());
+                        numero1 = Double.parseDouble(eNumero_1.getText().toString());
+                        numero2 = Double.parseDouble(eNumero_2.getText().toString());
                         producto = numero1 * numero2;
                         bResultado.setOnClickListener(new View.OnClickListener() {
                             public void onClick(View view) {
@@ -98,8 +99,8 @@ public class Practica2punto2 extends AppCompatActivity {
                         Toast texto= Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT);
                         texto.show();
                     }else {
-                        numero1 = Integer.parseInt(eNumero_1.getText().toString());
-                        numero2 = Integer.parseInt(eNumero_2.getText().toString());
+                        numero1 = Double.parseDouble(eNumero_1.getText().toString());
+                        numero2 = Double.parseDouble(eNumero_2.getText().toString());
                         if (numero2 == 0) eSolucion.setText("Infinity");
                         producto = numero1 / numero2;
                         bResultado.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +108,7 @@ public class Practica2punto2 extends AppCompatActivity {
                                 eSolucion.setText(String.valueOf(producto)); //opcion 1
                             }
                         });
+
                     }
                 }
                 break;
